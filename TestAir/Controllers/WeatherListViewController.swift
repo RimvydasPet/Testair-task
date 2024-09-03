@@ -41,8 +41,9 @@ class WeatherListViewController: UITableViewController {
         if let weather = weatherData {
             print("Configuring cell with weather data: \(weather)")
             cell.cityLabel.text = weather.cityName
-            cell.temperatureLabel.text = "\(weather.temperature)°C"
+            cell.temperatureLabel.text = weather.temperatureString
             cell.descriptionLabel.text = weather.description
+            cell.dateLabel.text = weather.formattedDate
             
             if let iconUrl = URL(string: weather.icon) {
                 weatherManager.downloadImage(from: iconUrl) { image in

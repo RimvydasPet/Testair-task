@@ -17,7 +17,7 @@ struct WeatherManager {
     
     func fetchWeather(cityName: String, completion: @escaping (WeatherCompletion)) {
         
-        var urlString = "\(weatherURL)&q=\(cityName)"
+        let urlString = "\(weatherURL)&q=\(cityName)"
         
         if let url = URL(string: urlString) {
             let session = URLSession(configuration: .default)
